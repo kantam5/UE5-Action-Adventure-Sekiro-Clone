@@ -27,7 +27,7 @@ Window 64bit
   - 특정 GameplayTag가 존재한다면 패시브 능력을 멈추거나 Ability를 실행할 수 없도록 제한할 수 있습니다.
 
 ## 캐릭터  
-
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/faabcc68-fb26-4b0e-9907-149868f75fd1)
 #### FCharacterData
 - 캐릭터가 가지고 있는 GameplayEffect와 GameplayAbility를 관리합니다.
 - 캐릭터가 사용할 애니메이션을관리합니다.
@@ -272,7 +272,7 @@ void AEnemyCharacterBase::HandleDeathBlow(FGameplayTag Tag, const AAA_CharacterB
 	AbilitySystemComponent->AddLooseGameplayTag(DeathBlowedTag);
 }
 ```
-- 적의 체력 게이지와 락온, 인살 대상이 되었을 때, 표시할 WidgetComponent를 구현하였습니다. 락온, 인살 WidgetComponent는 MeshSocket에 장착하여 WidgetComponent가 애니메이션 출력 중에도 따라가도록 설정하였습니다.
+- 적의 체력 게이지와 락온, 인살 대상이 되었을 때, 표시할 WidgetComponent를 구현하였습니다. 락온, 인살 WidgetComponent는 MeshSocket에 장착하여 WidgetComponent가 애니메이션 출력 중에도 따라가도록 설정하였습니다.  
 ![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/900e5ca0-18aa-4d94-944a-77f368371ded)
 
 
@@ -596,6 +596,7 @@ void UHookablePointTracker::UpdatetTrackerPointMaterial(float CharacterPointDist
 - Actor가 뷰포트의 일정 범위를 벗어나거나, 벽에 가려져서 카메라에 잡히지 않는다면 WidgetComponent가 출력되지 않습니다.
 
 ---
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/6db7c405-0066-4928-bbfe-3eb5b26d001e)
 #### UInteractionComponent
 - Player는 InteractionComponent를 가지고 있으며, 상호작용을 담당합니다.
 - Actor의 일정 범위에 들어가면 TArray 컨테이너인 InteractionActors에 들어갑니다.
@@ -1587,7 +1588,8 @@ void UBTTask_UseAbility::OnAbilityEnded(UGameplayAbility* GameplayAbility)
 
 ## 인벤토리
 ![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/5fed5587-14ae-4100-baa7-0f60e34c20c2)
-
+---
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/bd219cd3-a8a5-4288-95cd-8a3a5c31a1ca)
 #### UAA_Item
 - AA_Item은 PrimaryDataAsset을 상속합니다. 
 - 아이템의 실제 데이터로 아이템 타입과 이름, 설명, 장착 했을 때 부여되는 Ability 등을 가집니다.  
