@@ -17,8 +17,7 @@ Unreal Engine 5.1.1
 Window 64bit
 
 #### 프로젝트 영상
-
-[![UE5 세키로 모작](https://youtu.be/KjPy1M47Hkk/0.jpg)](https://youtu.be/KjPy1M47Hkk)
+[![Video Label](http://img.youtube.com/vi/KjPy1M47Hkk/0.jpg)](https://youtu.be/KjPy1M47Hkk)
 
 #### GAS를 선택한 이유
 - GameplayEffect와 GameplayAbility를 GameplayTag로 쉽게 다룰 수 있습니다. 
