@@ -1,4 +1,3 @@
-# UE5-Action-Adventure-Sekiro-Clone
 Unreal Engine 5.1.1 Portfolio
 
 ## 프로젝트 개요
@@ -32,7 +31,8 @@ Window 64bit
 #### FCharacterData
 - 캐릭터가 가지고 있는 GameplayEffect와 GameplayAbility를 관리합니다.
 - 캐릭터가 사용할 애니메이션을관리합니다.
-- 이미지
+
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/5c39e367-bb5a-40ca-8a2c-f8463b610dd6)
 > AA_CharacterTypes.h
 ``` c++
 USTRUCT(BlueprintType)
@@ -147,7 +147,7 @@ bool UAbilityTraversalComponent::TryNormalAttackTraversal(UAbilitySystemComponen
 ```
 - 락온
   - 락온 Ability 발동 시, 플레이어와 락온한 타겟의 거리에 따라 카메라의 Roll 값이 변경되도록 Curve를 이용하였습니다
-  - 이미지
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/0d272458-a513-4b86-b6c4-51e612af60c3)
 > PlayerCharacter.cpp
 ``` c++
 if (bIsLockOn && LockOnTarget)
@@ -273,7 +273,7 @@ void AEnemyCharacterBase::HandleDeathBlow(FGameplayTag Tag, const AAA_CharacterB
 }
 ```
 - 적의 체력 게이지와 락온, 인살 대상이 되었을 때, 표시할 WidgetComponent를 구현하였습니다. 락온, 인살 WidgetComponent는 MeshSocket에 장착하여 WidgetComponent가 애니메이션 출력 중에도 따라가도록 설정하였습니다.
-- 이미지 위젯 컴포넌트
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/900e5ca0-18aa-4d94-944a-77f368371ded)
 
 
 ---
@@ -326,11 +326,12 @@ void ABossCharacter::OnDetectionBoxBeginOverlap(UPrimitiveComponent* OverlappedC
 
 ## LegIK
 - 캐릭터의 스켈레톤에 발과 루트 소켓을 생성하였습니다. AnimInstance에서 매 프레임마다 이 소켓에서부터 LineTrace를 이용하여 양발의 위치와 각도, 루트의 위치를 계산하고 보간하여 이동합니다.
-- 발 위치 이미지
+
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/5b2f13e7-8c35-4a29-9788-0915cfd6cdfb)
 
 ## 발소리  
-- PhyscalMaterial로 물체의 표면을 나타냅니다. USoundBase와 UNiagaraSystem을 이용하여 물체의 표면에 따라 다른 SFX와 VFX를 설정하였습니다.
-- 피지컬 머티리얼 이미지
+- PhyscalMaterial로 물체의 표면을 나타냅니다. USoundBase와 UNiagaraSystem을 이용하여 물체의 표면에 따라 다른 SFX와 VFX를 설정하였습니다.  
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/7ef0edbb-c768-4404-968a-0d77073b61e2)
 > SurfacePhysicalMaterial.h
 ``` c++
 UCLASS()
@@ -515,8 +516,8 @@ UAnimMontage* UGrapplingHookComponent::GetHookMontage()
 #### AHookablePoint
 - HookablePoint는 BoxComponent를 가지며, Overlap 시, GrapplingHookComponent의 HookablePoints에 들어갑니다. 
 - Ability 실행 시, CableComponent가 도달할 위치와 플레이어가 이동할 에디터 상에서 편리하게 설정할 수 있도록 BillboradComponent를 가집니다.
-- 포인터가 FocusedPoint가 되었을 시, 표시할 WidgetComponent인 HookablePointWidget을 가집니다.
-- 에디터에서의 이미지
+- 포인터가 FocusedPoint가 되었을 시, 표시할 WidgetComponent인 HookablePointWidget을 가집니다.  
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/d323ae08-371f-46bc-9cc2-e4e701fd7eee)
 
 ---
 #### UHookablePointWidget
@@ -701,8 +702,8 @@ void AInteractionActorBase::ConstrainScreenBounds()
 	}
 }
 ```
-- FocusedActor가 되었을 때, 표시할 WidgetComponent인 StartFocusedWidget을 가지고 있습니다. Widget에서 출력할 텍스트도 지정할 수 있습니다.
-- 포커스되었을 때 이미지
+- FocusedActor가 되었을 때, 표시할 WidgetComponent인 StartFocusedWidget을 가지고 있습니다. Widget에서 출력할 텍스트도 지정할 수 있습니다.   
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/843f8ff1-1156-4406-b6ba-2daba34b7581)
 - InteractionActorBase는 InteractionInterface를 상속받습니다. FoucedActor와 상호작용 시, 이 인터페이스의 OnInteract가 실행됩니다.
 > InteractionInterface.h
 ``` c++
@@ -770,8 +771,8 @@ void AItemPickupActor::GiveItem()
 ## 전투
 #### UAA_GameplayAbility
 프로젝트의 GameplayAbility의 베이스 클래스입니다. 
-- Ability의 실행 직후 적용할 GameplayEffect와 종료 시 함께 삭제될 GameplayEffect 그리고 종료 시 적용할 GameplayEffect를 설정할 수 있습니다.
-- 이미지
+- Ability의 실행 직후 적용할 GameplayEffect와 종료 시 함께 삭제될 GameplayEffect 그리고 종료 시 적용할 GameplayEffect를 설정할 수 있습니다.  
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/b6ea5f70-0c2d-4864-9df3-e8e1c57f68ab)
 > AA_GameplayAbility.h
 ``` c++
 protected:
@@ -849,7 +850,7 @@ void UGA_Melee::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const F
 	MontageTask->ReadyForActivation();
 }
 ```
-- 몽타주 이미지 
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/ffc8d78f-ddaf-4808-bba6-836222f304ca)
 - AnimNotifyState_WeaponAttack으로 무기의 피격시간과 AttackEventTag를 설정합니다.
 - A의 무기가 B에 Overlap되었을 시, 미리 지정한 AttackEventTag와 B를 타겟으로 설정한 GameplayEvent를 A에게 전송합니다. 
 > WeaponActor.cpp
@@ -892,7 +893,6 @@ void AWeaponActor::CapsuleBeginOverlap(UPrimitiveComponent* OverlappedComponent,
 ---
 #### 콤보 공격
 - 플레이어의 경우 일반 공격 중에 다시 공격을 시도하면 콤보 공격을 할 수 있습니다.
-- 몽타주 이미지
 - AnimNotifyState_JumpSection으로 해당 구간에서 공격 시도 시, 몽타주의 Section을 넘어가서 실행하는 것으로 구현하였습니다.
 > PlayerCharacter.cpp의 JumpSectionForCombo
 ``` c++
@@ -1248,7 +1248,6 @@ void APlayerCharacter::HandlePoiseDamage(float DamageAmount, const FHitResult& H
 - 투사체를 발사하는 Ability 입니다. 영상에서는 수리검에 해당 Ability를 사용했습니다. 
 - Ability를 실행하면 몽타주를 출력하며, AnimNotify로 특정 순간에 GameplayEvent를 전달받습니다.
 - 전달받은 순간 투사체를 생성합니다.
-- 몽타주 이미지
 > GA_FireProjectile.cpp
 ``` c++
 void UGA_FireProjectile::EventReceived(FGameplayTag EventTag, FGameplayEventData EventData)
@@ -1289,8 +1288,8 @@ void UGA_FireProjectile::EventReceived(FGameplayTag EventTag, FGameplayEventData
 ---
 #### CombatArt Ability
 - 무기의 공격 범위를 늘려서 공격하거나 돌진 공격을 할 수 있는 Ability입니다. 
-- 무기의 CapsuleComponent를 따로 두어 CombatAbility는 해당 CapsuleComponent를 사용하는 것으로 구현하였습니다.
-- 무기 이미지 에디터 에서
+- 무기의 CapsuleComponent를 따로 두어 CombatAbility는 해당 CapsuleComponent를 사용하는 것으로 구현하였습니다.  
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/38e45430-9ab6-4d38-88b8-e89c4a5e4714)
 - 돌진 공격의 경우 최대 거리를 설정하여 타겟과의 거리가 최대 거리 이하라면 타겟 바로 앞까지 이동하며, 이상이라면 최대 거리까지만 이동하도록 설정하였습니다.
 > GA_CombatArtBase.cpp
 ``` c++
@@ -1333,8 +1332,8 @@ void UGA_CombatArtBase::EventReceived(FGameplayTag EventTag, FGameplayEventData 
 
 ---
 #### AA_DamageExecutionCalculation
-- 데미지를 주는 GameplayEffect의 Execution을 AA_DamageExecutionCalculation으로 설정하여 데미지 계산을 수행하도록 하였습니다.
-- gameplayeffect 이미지
+- 데미지를 주는 GameplayEffect의 Execution을 AA_DamageExecutionCalculation으로 설정하여 데미지 계산을 수행하도록 하였습니다.  
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/59a12576-406c-4f41-a447-4643a7a36858)
 - AA_DamageExecutionCalculation은 데미지에 영향을 주는 Attribute를 Target과 Source에서부터 캡쳐하여 데미지 계산을 수행합니다.
 > AA_DamageExecutionCalculation.cpp
 ``` c++
@@ -1467,12 +1466,12 @@ void UBTTask_MoveSide::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMe
 	}
 	ensure(GetSpecialNodeMemory<FBTTaskMemory>(NodeMemory)->NextTickRemainingTime <= 0.f);
 ```
-- 노드 이미지
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/1393027d-7dcb-4e26-8ba2-7607658af784)
 
 ---
 #### BTService_DetectDeflect
-- 적이 패리를 성공하면 즉시 반격을 하도록 설정하였습니다. BTService_DetectDeflect에서 패리를 감지합니다.
-- 노드 이미지
+- 적이 패리를 성공하면 즉시 반격을 하도록 설정하였습니다. BTService_DetectDeflect에서 패리를 감지합니다.  
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/38fd510c-04e4-47d8-a60d-3dc68273ae53)
 
 ---
 #### BTTask_TurnTowardNoise
@@ -1587,12 +1586,12 @@ void UBTTask_UseAbility::OnAbilityEnded(UGameplayAbility* GameplayAbility)
 ```
 
 ## 인벤토리
-인벤토리 UI 이미지
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/5fed5587-14ae-4100-baa7-0f60e34c20c2)
 
 #### UAA_Item
 - AA_Item은 PrimaryDataAsset을 상속합니다. 
-- 아이템의 실제 데이터로 아이템 타입과 이름, 설명, 장착 했을 때 부여되는 Ability 등을 가집니다. 
-- 아이템 이미지
+- 아이템의 실제 데이터로 아이템 타입과 이름, 설명, 장착 했을 때 부여되는 Ability 등을 가집니다.  
+![image](https://github.com/kantam5/UE5-Action-Adventure-Sekiro-Clone/assets/59176502/852d62ba-b121-4f25-9871-3339afd91178)
 
 ---
 #### FAA_ItemData
