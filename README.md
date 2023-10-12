@@ -5,7 +5,7 @@ Unreal Engine 5.1.1 Portfolio
 
 #### 프로젝트 설명  
 
-언리얼 엔진5와 GameplayAbilitySystem을 이용한 3인칭 액션 게임으로 세키로를 모작한 프로젝트입니다.  
+언리얼 엔진5와 GameplayAbilitySystem을 이용한 3인칭 액션 게임으로 "세키로: 섀도우 다이 트와이스"를 모작한 프로젝트입니다.  
 위젯을 포함하여 모든 요소는 C++로 작성하였습니다.
 
 #### 엔진 버전  
